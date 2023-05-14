@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>프로필 설정</title>
+    <title>회원정보수정</title>
+
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- SCRIPT -->
     <script defer src="assets/js/common.js"></script>
+
+    
 </head>
-<body class="">
+<body>
     <div id="skip">
         <a href="#header">헤더 영역 바로가기</a>
         <a href="#main">컨텐츠 영역 바로가기</a>
@@ -58,7 +61,6 @@
         </div>
         <!-- //header -->
         <div class="info__wrap">
-            
             <div class="info__title mt30 info__bmStyle">
                 <h1>ooo님></h1>
             </div>
@@ -67,11 +69,11 @@
                     <div class="aside1 aside__bmStyle">
                         <span>나의정보</span>
                         <ul>
-                            <li><a href="#" class="active">프로필 설정</a></li>
-                            <li><a href="#">회원정보 수정</a></li>
+                            <li><a href="#">프로필 설정</a></li>
+                            <li><a href="#" >회원정보 수정</a></li>
                         </ul>
                     </div>
-                    <div class="aside2 aside__bmStyle"> 
+                    <div class="aside2 aside__bmStyle">
                         <span>나의정보</span>
                         <ul>
                             <li><a href="#" >내가 쓴 게시물</a></li>
@@ -82,68 +84,60 @@
                     <div class="aside3 ">
                         <span>알림</span>
                         <ul>
-                            <li><a href="#">알림설정</a></li>
+                            <li><a href="#" class="active">알림설정</a></li>
                         </ul>
                     </div>
                 </div>
-
-                <div class="info__view">
+                <div class="info__view"  id="scrollInfo">
                     <div class="info__view__title">
-                        <h2>프로필 설정</h2>
+                        <h2>알람설정</h2>
                     </div>
-                    <form action="#" name="#" method="post">
-                        <div class="nick__form" >
-                            <img src="assets/img/profile.png" alt="프로필사진등록">
-                            <p class="nick__tag">닉네임설정</p>
+                    
+                    <div class="info__form" >
+                        <div>
+                            <ul>
+                                <li>· 알람설정을 하시면 내가 등록한 제품의 유통기한을 받아보실수 있습니다.</li>
+                                <li>· 알람설정을위해 계정연동 & 핸드폰 등록을 해주세요.</li>
+                            </ul>
+                        </div>
+                        <div class="">
+                            <form action="#" name="#" method="post"></form>
                                 <fieldset>
-                                    <legend class="blind">닉네임설정</legend>        
-                                    <div class="inputNickStyleInfo">
-                                        <label for="youNick" class=""></label>
-                                        <input type="text" id="youNick" name="youNick" class="nickInput inputStyle" placeholder="관리자" required>
+                                    <legend class="blind">카카오&sns </legend>        
+                                    <div class="inputStyleAgree agreeInner">
+                                        <div class="snsDiv">
+                                            <p>SNS 알림</p>
+                                            <input type="checkbox" id="toggleSns" hidden>
+                                            <label for="toggleSns" class="toggleSwitchSns" id="snsAgree">
+                                                <span class="toggleButton" id="snsAgree"></span>
+                                            </label>
+                                        </div>
+                                        <div class="kakaoDiv">
+                                            <p>KAKAO 알림</p>
+                                            <input type="checkbox" id="toggle" hidden>
+                                            <label for="toggle" class="toggleSwitch " id="kakaoAgree">
+                                                <span class="toggleButton" id="kakaoAgree"></span>
+                                            </label>
+                                        </div>
                                     </div>
+                                    <div class="inputStyleKakao">
+                                         
+                                    </div>
+
                                 </fieldset>
-                            <button type="button" class="nickBtn infoBtnStyle1 ">중복확인</button>
+                            </form>
+                            
+                            <button type="button" class="btnConf infoBtnStyle1 ">확인</button>
                         </div>
-                        <div class="skinType__inner mb100"> 
-                            <div class="skinType__title"><span>피부타입</span></div>
-                            <div class="skinType__cont">
-                                <label class="toggle__type">
-                                    <input type="checkbox">
-                                    <span class="toggle__info">민감성</span>
-                                </label>
-                                <label class="toggle__type">
-                                    <input type="checkbox">
-                                    <span class="toggle__info">민감성</span>
-                                </label>
-                                <label class="toggle__type">
-                                    <input type="checkbox">
-                                    <span class="toggle__info">민감성</span>
-                                </label>
-                                <label class="toggle__type">
-                                    <input type="checkbox">
-                                    <span class="toggle__info">민감성</span>
-                                </label>
-                                <label class="toggle__type">
-                                    <input type="checkbox">
-                                    <span class="toggle__info">민감성</span>
-                                </label>
-                                <label class="toggle__type">
-                                    <input type="checkbox">
-                                    <span class="toggle__info">민감성</span>
-                                </label>
-                                <label class="toggle__type">
-                                    <input type="checkbox">
-                                    <span class="toggle__info">민감성</span>
-                                </label>
-                            </div>
-                        </div>
-                    <button type="submit" class="btnConf infoBtnStyle1 ">저장</button>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
     <!-- main -->
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    <script>
     
+    </script>
 </body>
 </html>

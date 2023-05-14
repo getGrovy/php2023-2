@@ -125,11 +125,13 @@
 /* info  start*/
 .info__view {
     width: calc(97% - 115px);
-    overflow-y:scroll;
     background-color: #fff;
     border-radius: 10px;
     max-height: 500px;
     position: relative;
+}
+.info__view.scroll {
+    overflow-y:scroll;
 }
 
 .info__view__title {
@@ -317,7 +319,6 @@
     border-radius: 50%;
     background: var(--bg__pink3);
 }
-
 #toggle:checked~.toggleSwitch {
     background: var(--bg__pink3);
     /* background: #fff */
@@ -352,6 +353,64 @@
 }
 
 /* info end*/
+.inputStyleAgree.agreeInner{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.inputStyleAgree.agreeInner div{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* .inputStyleAgree.agreeInner div:nth-child(1){
+    
+} */
+/* SNSAgree start */
+.toggleSwitchSns {
+    width: 60px;
+    height: 30px;
+    display: block;
+    position: relative;
+    border-radius: 30px;
+    background-color: #fff;
+    box-shadow: 0 0 16px 3px rgba(0 0 0 / 15%);
+    cursor: pointer;
+}
+
+.toggleSwitchSns .toggleButton {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 50%;
+    left: 4px;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background: var(--bg__pink3);
+}
+#toggleSns:checked~.toggleSwitchSns {
+    background: var(--bg__pink3);
+}
+#toggleSns:checked~.toggleSwitchSns .toggleButton {
+    left: calc(100% - 29px);
+    background: #fff;
+}
+
+.toggleSwitchSns,
+.toggleButton {
+    transition: all 0.2s ease-in;
+}
+.inputStyleAgree.agreeInner p {
+    font-size: 20px;
+    font-weight: 900;
+}
+
+
+
+/* SNSAgree end */
+
 /* profile start*/
 .nick__form {
     width: 100%;
