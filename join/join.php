@@ -24,7 +24,7 @@
             <h2>회원가입</h2>
             <p>회원가입을 위해 아이디와 비밀번호를 등록해주세요.</p>
             <div class="join__form">
-                <form action="joinSave.php" name="#" method="post" onsubmit="return joinChecks()">
+                <form action="joinEnd.php" name="#" method="post" onsubmit="return joinChecks()">
                     <fieldset>
                         <legend class="blind">회원가입 영역</legend>
                         <div>
@@ -67,9 +67,9 @@
                         <div>
                             <label for="youGender"></label>
                             <select type="text" id="youGender" name="youGender" class="inputStyle" placeholder="성별">
-                                <option value="">성별 선택</option>
-                                <option value="1">남</option>
-                                <option value="2">여</option>
+                                <option value="gender">성별 선택</option>
+                                <option value="male">남</option>
+                                <option value="female">여</option>
                             </select>
                         </div>
                         <button type="submit" class="btnStyle3">회원가입 완료</button>

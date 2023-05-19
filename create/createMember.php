@@ -21,6 +21,4 @@
         echo "create tables false";
     }
 ?>
-
-
 <!-- INSERT INTO `members2` (`memberID`, `youEmail`, `youName`, `youPass`, `youPhone`, `regTime`, `nickName`, `youBirth`, `youImgSrc`, `youImgSize`, `youGender`) VALUES ('1', 'admin@admin.com', '관리자', '1234', '000-0000-0000', '1234', '관리자', '1999-01-01', NULL, NULL, NULL); -->

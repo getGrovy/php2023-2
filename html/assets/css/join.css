@@ -44,7 +44,7 @@ body {
 .joinChkmsg{
     text-align: left !important;
     font-size: 0.8rem !important;
-    margin-top: 9px;
+    margin-top: 8px;
 }
 .joinChkmsg.green{
     color: rgb(0, 185, 124);
@@ -52,6 +52,7 @@ body {
 .joinChkmsg.red{
     color: #F06171;
 }
+
 /* media */
 @media (max-width: 600px){
     .intro__inner.center .intro__text {
