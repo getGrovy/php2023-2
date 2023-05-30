@@ -1,6 +1,11 @@
 <?php 
     include "../connect/connect.php";
     include "../connect/session.php";
+
+    if(!isset($_SESSION['memberID'])){
+        Header("Location:../login/login.php");
+    }
+
     $youName=$_SESSION['youName'];
     $youEmail=$_SESSION['youEmail'];
 ?>
@@ -11,13 +16,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>아이디 찾기</title>
+    <title>내정보 변경</title>
     <!-- CSS -->
     <link rel="stylesheet" href="../html/assets/css/style.css">
     <!-- SCRIPT -->
     <script defer src="../html/assets/js/common.js"></script>
 </head>
-<body >
+<body id ="scroll">
     <div id="skip">
         <a href="#header">헤더 영역 바로가기</a>
         <a href="#main">컨텐츠 영역 바로가기</a>
@@ -40,22 +45,22 @@
                     <div class="aside1 aside__bmStyle">
                         <span>나의정보</span>
                         <ul>
-                            <li><a href="#">프로필 설정</a></li>
+                            <li><a href="myInfoProfile.php">프로필 설정</a></li>
                             <li><a href="#" class="active">회원정보 수정</a></li>
                         </ul>
                     </div>
                     <div class="aside2 aside__bmStyle">
                         <span>나의정보</span>
                         <ul>
-                            <li><a href="#" >내가 쓴 게시물</a></li>
-                            <li><a href="#" >내가 쓴 댓글</a></li>
+                            <li><a href="myinfoMywrite.php" >내가 쓴 게시물</a></li>
+                            <li><a href="myinfoMyComment.php" >내가 쓴 댓글</a></li>
                             <li><a href="#" >내 제품 기록</a></li>
                         </ul>
                     </div>
                     <div class="aside3 ">
                         <span>알림</span>
                         <ul>
-                            <li><a href="#">알림설정</a></li>
+                            <li><a href="myInfoSNSAgree.php">알림설정</a></li>
                         </ul>
                     </div>
                 </div>
@@ -161,7 +166,7 @@
                 data : {"youPass" : $("#youPass").val(),"youEmail" : $("#youEmail").val(), "type" : "isPwChk"},
                 dataType : "json",
                 success : function(data){
-                    if(data.result == "good"){
+                    if(data.result == "bad"){
                         chkInfo = false;
                         console.log(chkInfo + "good");
                         alert('비밀번호를 다시확인해주세요');

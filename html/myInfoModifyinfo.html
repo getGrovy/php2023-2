@@ -13,7 +13,7 @@
 
     
 </head>
-<body id="scroll">
+<body>
     <div id="skip">
         <a href="#header">헤더 영역 바로가기</a>
         <a href="#main">컨텐츠 영역 바로가기</a>
@@ -22,7 +22,7 @@
     <!-- //skip -->
 
     
-    <main id="main" class=" mt80 ">
+    <main id="main" class=" mt80">
         <header id="header">
             <div class="header__inner">
                 <div class="kategorie">
@@ -60,7 +60,7 @@
             <h1>Abide By Beauty</h1>
         </div>
         <!-- //header -->
-        <div class="info__wrap" >
+        <div class="info__wrap">
             <div class="info__title mt30 info__bmStyle">
                 <h1>ooo님></h1>
             </div>
@@ -88,7 +88,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="info__view">
+                <div class="info__view scroll"  id="scrollInfo">
                     <div class="info__view__title">
                         <h2>회원정보 수정</h2>
                     </div>
@@ -160,6 +160,15 @@
                                         </label>
                                     </div>
                                     <div class="user__phone__inner">
+                                        <div  class="inputStyleInfo youAgency"> 
+                                            <label for="youAgency"></label>
+                                            <select type="text" id="youAgency" name="youAgency" class="inputStyle" placeholder="통신사" required>
+                                                <option value="010">010</option>
+                                                <option value="011">011</option>
+                                                <option value="016">016</option>
+                                                <option value="019">019</option>
+                                            </select>
+                                        </div>
                                         <div  class="inputStyleInfo youPhone"> 
                                                 <label for="youPhone"></label>
                                                 <input type="text" id="youPhone" name="youPhone" class="inputStyle" placeholder="전화번호">
@@ -239,35 +248,35 @@
 
 
         $(document).ready(function() {
-            // 연도 select box 만들기
-            var yearSelect = $('#youYear');
-            var currentYear = new Date().getFullYear();
-            for (var i = currentYear; i >= 1950; i--) {
-                yearSelect.append($('<option>', {value: i, text: i + '년'}));
+        // 연도 select box 만들기
+        var yearSelect = $('#youYear');
+        var currentYear = new Date().getFullYear();
+        for (var i = currentYear; i >= 1950; i--) {
+            yearSelect.append($('<option>', {value: i, text: i + '년'}));
+        }
+
+        // 월 select box 만들기
+        var monthSelect = $('#youMonth');
+        for (var i = 1; i <= 12; i++) {
+            monthSelect.append($('<option>', {value: i, text: i + '월'}));
+        }
+
+        // 일 select box 만들기
+        var daySelect = $('#youDay');
+        daySelect.append($('<option>', {value: 0, text:'달을 선택하세요'}));
+
+        // 월이 선택되었을 때
+        $('#youMonth').on('change', function() {
+            daySelect.empty(); // 기존 옵션 제거
+
+            var year = $('#youYear').val();
+            var month = $('#youMonth').val();
+            var daysInMonth = new Date(year, month, 0).getDate(); // 해당 월의 일 수 계산
+
+            for (var i = 1; i <= daysInMonth; i++) {
+            daySelect.append($('<option>', {value: i, text: i + '일'}));
             }
-
-            // 월 select box 만들기
-            var monthSelect = $('#youMonth');
-            for (var i = 1; i <= 12; i++) {
-                monthSelect.append($('<option>', {value: i, text: i + '월'}));
-            }
-
-            // 일 select box 만들기
-            var daySelect = $('#youDay');
-            daySelect.append($('<option>', {value: 0, text:'달을 선택하세요'}));
-
-            // 월이 선택되었을 때
-            $('#youMonth').on('change', function() {
-                daySelect.empty(); // 기존 옵션 제거
-
-                var year = $('#youYear').val();
-                var month = $('#youMonth').val();
-                var daysInMonth = new Date(year, month, 0).getDate(); // 해당 월의 일 수 계산
-
-                for (var i = 1; i <= daysInMonth; i++) {
-                daySelect.append($('<option>', {value: i, text: i + '일'}));
-                }
-            });
+        });
         });
     </script>
 </body>

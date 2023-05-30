@@ -4,10 +4,15 @@
 
     $youEmail = $_POST['youEmail'];
     $youPass = $_POST['youPass'];
+
+    echo $youEmail, $youPass;
+    echo $youEmail, $youPass;
+    echo $youEmail, $youPass;
+    echo $youEmail, $youPass;
     
     // 데이터 출력
     
-    // 세션값 추가해야함 ! 
+    
     $sql = "update members2 set youPass = '{$youPass}' where youEmail = '{$youEmail}'";
         
     $connect ->query($sql);
